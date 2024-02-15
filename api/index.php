@@ -9,7 +9,7 @@
     $password   = '';
 
     try {
-        $pdo = new PDO('mysql:host=localhost;dbname=pruebashopeando', $db_user, $password);
+        $pdo = new PDO('mysql:host=localhost;dbname='.$dbname, $db_user, $password);
         $pdo->query('SELECT * FROM pruebashopeando.posts');
     } catch (PDOException $e) {
         print "¡Error!: " . $e->getMessage() . "<br/>";
