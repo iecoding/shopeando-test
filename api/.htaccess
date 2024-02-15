@@ -1,0 +1,18 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On 
+
+    #use https
+    RewriteCond %{SERVER_PORT}   !^443$
+    RewriteRule  (.*)  https://%{HTTP_HOST}/%{REQUEST_URI}  [L]
+
+    #used for api
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-s
+    RewriteRule ^(.*)$ index.php?rquest=$1 [QSA,NC,L]
+
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^(.*)$ index.php [QSA,NC,L]
+
+    RewriteCond %{REQUEST_FILENAME} -s
+    RewriteRule ^(.*)$ index.php [QSA,NC,L] 
+</IfModule>

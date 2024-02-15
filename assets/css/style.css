@@ -1,0 +1,20 @@
+/* Style for the loading spinner */
+#loading-spinner {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+#loading-spinner img {
+  width: 50px;
+  height: 50px;
+}
+
+/* */
+.single-line {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
